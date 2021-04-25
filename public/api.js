@@ -42,5 +42,3 @@ const API = {
     return json;
   },
 };
-
-// mongodb+srv://DB:<password>@trainer-cluster.2poqm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority

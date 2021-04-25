@@ -16,5 +16,15 @@
     "mongojs": "^3.1.0",
     "mongoose": "^5.3.16",
     "morgan": "^1.9.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drewbassett24/Workout-Tracker.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/drewbassett24/Workout-Tracker/issues"
+  },
+  "homepage": "https://github.com/drewbassett24/Workout-Tracker#readme"
 }

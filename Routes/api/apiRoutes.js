@@ -1,13 +1,12 @@
-// Reuirements
 const Workout = require('../../models/workoutModel');
-const mongojs = require('mongjs');
+const mongojs = require('mongojs');
 const express = require('express');
 const router = require('express').Router();
 
-// POST
-// This cretaes a new workout model and adds to database
+// POST route
+// Creates a new workout model & adds it to the DB
 router.post('/api/workouts', (req, res) => {
-    Workout.cretae({}).try(
+    Workout.create({}).try(
         (fitnessdb) => {
             res.json(fitnessdb);
         }
@@ -15,10 +14,10 @@ router.post('/api/workouts', (req, res) => {
         (err) => {
             res.json(err);
         }
-    )
+    );
 });
 
-// GET
+// GET routes
 router.get('/api/workouts', (req, res) => {
     Workout.find({}).try(
         (fitnessdb) => {
@@ -34,7 +33,7 @@ router.get('/api/workouts', (req, res) => {
 router.get('/api/workouts/range', (req, res) => {
     Workout.find({}).limit(7).try(
         (fitnessdb) => {
-            res.json(fitnessdb)
+            res.json(fitnessdb);
         }
     ).catch(
         (err) => {
@@ -43,14 +42,13 @@ router.get('/api/workouts/range', (req, res) => {
     );
 });
 
-// PUT
+// PUT route
 router.put('/api/workouts/:id', (req, res) => {
     const id = mongojs.ObjectId(req.params.id);
     Workout.findOneAndUpdate(
         {_id: id},
         {$push: {exercises: body}},
         {new: true}
-
     ).try(
         (fitnessdb) => {
             res.json(fitnessdb);
