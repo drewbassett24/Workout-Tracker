@@ -1,7 +1,7 @@
 const { MongoClient } = require("mongodb");
  
 // Replace the following with your Atlas connection string                                                                                                                                        
-
+// CONNECTION SRTING NOW IN .env
 const client = new MongoClient(process.env.MONGODB_URL);
 async function run() {
     try {
