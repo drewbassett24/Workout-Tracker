@@ -15,7 +15,7 @@ app.use(routes);
 
 
 mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://localhost/workout',
+    process.env.MONGODB_URI || 'mongodb://localhost/workoutAtlas',
     {useNewUrlParser: true});
 
 app.listen(PORT, () => {
