@@ -1,1 +1,25 @@
-{}
+{
+  "name": "workout-tracker",
+  "version": "1.0.0",
+  "description": "This app is a workout tracker. The front end code was provided. It was an exercise in creating a Mongo database with a Mongoose schema and handling routes with Express.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drewbassett24/Workout-Tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drewbassett24/Workout-Tracker/issues"
+  },
+  "homepage": "https://github.com/drewbassett24/Workout-Tracker#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.0.6",
+    "morgan": "^1.10.0"
+  }
+}
