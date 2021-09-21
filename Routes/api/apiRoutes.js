@@ -4,7 +4,7 @@ const router = require('express').Router();
 
 // POST route
 // Creates a new workout model & adds it to the DB
-router.post('/api/workouts', (req, res) => {
+router.post('/workouts', (req, res) => {
     Workout.create({}).then(
         (fitnessdb) => {
             res.json(fitnessdb);
@@ -17,7 +17,7 @@ router.post('/api/workouts', (req, res) => {
 });
 
 // GET routes
-router.get('/api/workouts', (req, res) => {
+router.get('/workouts', (req, res) => {
     Workout.aggregate([
         {
             $addFields: {
@@ -37,7 +37,7 @@ router.get('/api/workouts', (req, res) => {
     );
 });
 
-router.get('/api/workouts/range', (req, res) => {
+router.get('/workouts/range', (req, res) => {
     Workout.find({}).limit(7).try(
         (fitnessdb) => {
             res.json(fitnessdb);
