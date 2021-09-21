@@ -50,7 +50,7 @@ router.get('/workouts/range', (req, res) => {
 });
 
 // PUT route
-router.put('/api/workouts/:id', (req, res) => {
+router.put('/workouts/:id', (req, res) => {
     const id = mongojs.ObjectId(req.params.id);
     Workout.findOneAndUpdate(
         { _id: id },
