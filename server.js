@@ -15,7 +15,7 @@ app.use(routes);
 
 mongoose.connect(
     //process.env.MONGODB_URI || 'mongodb://localhost/WorkoutTracker',
-    "mongodb+srv://DB:Bastenfyr3@trainer-cluster.2poqm.mongodb.net/WorkoutTracker?retryWrites=true&w=majority",
+    "mongodb+srv://DB:Bastenfyr3@trainer-cluster.2poqm.mongodb.net/workoutTracker?retryWrites=true&w=majority",
     {
         useNewUrlParser: true
     });
