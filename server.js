@@ -2,6 +2,7 @@ const express = require('express');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 const routes = require('./routes');
+require('dotenv').config();
 
 const PORT = process.env.PORT || 3003
 
@@ -14,8 +15,7 @@ app.use(express.static('public'));
 app.use(routes);
 
 mongoose.connect(
-    //process.env.MONGODB_URI || 'mongodb://localhost/WorkoutTracker',
-    "mongodb+srv://DB:Bastenfyr3@trainer-cluster.2poqm.mongodb.net/workoutTracker?retryWrites=true&w=majority",
+    process.env.MONGODB_URI || 'mongodb://localhost/WorkoutTracker',
     {
         useNewUrlParser: true
     });
