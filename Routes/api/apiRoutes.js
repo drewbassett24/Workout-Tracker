@@ -38,7 +38,7 @@ router.get('/workouts', (req, res) => {
 });
 
 router.get('/workouts/range', (req, res) => {
-    Workout.find({}).limit(7).try(
+    Workout.find({}).limit(7).then(
         (fitnessdb) => {
             res.json(fitnessdb);
         }
@@ -51,12 +51,11 @@ router.get('/workouts/range', (req, res) => {
 
 // PUT route
 router.put('/workouts/:id', (req, res) => {
-    const id = mongojs.ObjectId(req.params.id);
-    Workout.findOneAndUpdate(
-        { _id: id },
-        { $push: { exercises: body } },
+    Workout.findByIdAndUpdate(
+        req.params.id,
+        { $push: { exercises: req.body } },
         { new: true }
-    ).try(
+    ).then(
         (fitnessdb) => {
             res.json(fitnessdb);
         }
